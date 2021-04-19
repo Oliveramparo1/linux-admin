@@ -1,0 +1,11 @@
+#!/bin/bash
+echo "$(date)" >> netinfo.txt
+echo "Infomation about the network" >> netinfo.txt
+ifconfig >> netinfo.txt
+#appending ip adresses to a file. Before doing this install net-tools
+ss -ltn >> netinfo.txt
+#says open ports and appends it to the end of netinfo.txt
+ss -s >>netinfo.txt
+#show activity going on in the network
+cat /etc/resolv.conf >> netinfo.txt
+#this will show information about the host and its address
