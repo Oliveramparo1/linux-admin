@@ -1,0 +1,5 @@
+#!/bin/bash
+echo "file to detect"
+read file
+stat $file
+
