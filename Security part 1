@@ -1,0 +1,6 @@
+#!/bin/bash
+echo "first file to check"
+read firstfile
+echo "second file to check"
+read secondfile
+diff $firstfile $secondfile 
