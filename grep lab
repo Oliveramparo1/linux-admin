@@ -1,0 +1,31 @@
+1.grep "Street" datebook
+This command works by searching for the word Street and printing the lines that have it
+2.grep "^J" datebook
+Because all the lines start with a name. I just need to search the start of every line for the letter J to print 
+all the names that start with J.
+3.grep "000$" datebook
+The $ searches for things at the end of a line and I wanted to search for lines that ended in 3 0s.
+4.grep -v "408" datebook
+The -v reverses whatever I am doing. I searched for 408 and instead of printing them it prints the lines that do not
+contain it
+5.grep 3/../.. datebook
+I realized that I can use the pattern of the dates as a way to search for them and the month of march is month 3. It
+prints all the lines that contain a birthday in march.
+6.grep 8..-...-.... datebook
+This is basically the same as the previous. I used the pattern of the phone numbers to print all the phone number that start with an 8
+and that the dots represent random numbers in the phone numbers
+7.grep "[A-Z][a-z][a-z][a-z][a-z], [A-Z]" datebook
+This searches for a pattern of capital, lower case letterts, commands, a space and another upper case letter. The [A-Z] shows all the letters that are capital
+and [a-z] letters that are lower case.
+8.grep ":.. [A-Z]\|:... [A-Z]" datebook
+There is a pattern in the datebook where there is a colon everytime there is a adress and I made it look for random two digit and 3 digit number adresses 
+9.grep "MA ." datebook
+This searches any line that contain "MA". In the question it asked me to find a number after the letters MA and that is what the dot is for.
+10.grep -v "Street" datebook| grep -v "St"
+The -v reverces the output so that it excludes Street and St.
+
+sources:
+https://www.thegeekstuff.com/2011/10/grep-or-and-not-operators/
+https://flylib.com/books/en/4.356.1.25/1/
+https://youtu.be/Iif-DjWYoWY
+https://www.youtube.com/watch?v=AExHhuYrmzQ
