@@ -1,0 +1,47 @@
+1. sed s/Karen/Linda/ datebook
+It searches for a pattern. The pattern is Karen. Then wherever it finds it. Then it replaces it with Linda
+2. sed '1,3d' datebook
+It uses adressing to target lines 1 through 3 out of the datebook. And it is being deleted using the d
+option which stands for delete acording to the flylib website.
+3. sed -n '2,4'p datebook"
+It addresses lines 2 through 4. And prints then using the p command option. The -n means to just print those lines
+and not the whole thing
+4. sed '/Place/d' datebook
+I am looking for a pattern. And the pattern is anything inside //, which is place. When it matches that
+pattern it deletes that line using the d option
+5.sed -n -e '/:4......:../p' -e '/11...../p' datebook
+It finds a patten with the dates and it includes another pattern and prints whatever matches the pattern.
+I want it to only print the lines that matches the pattern that is why I have the -n. And the -e is used 
+to include another pattern. looking back I guess I could have used the or operator
+6. sed s/Zippy/Zippy***/ datebook
+This very simplef as the first one. It takes the pattern Zippy and searches for it. And whether is it finds
+it gets replaced with Zippy***
+7. sed s/Popeye/"I yam what I yam an' tha's all I yam"/ datebook
+Instead of replacing a word with another word. It replaces it with a sentence. I noticed that the s/// format
+only replaced a word. And that is why I decide to put quotation so it takes the whole sentance.
+8. sed '18s+./../..+12/31/99/+' datebook
+I changed the deviders to be a plus sign because everytime I tried to run it with the dashes it 
+give me an error. The general pattern for date is "./../..". And also I want the starting point to
+be 19 because that is where I want to change the date. I want to change whatever matches that pattern
+after line 18 to be change which is only the sir lancelot line.
+9. sed '/^$/d' datebook
+If there is not any words at the beginning or at the end it deletes it. The ^ represents the beginning and $ represents the end
+that means that there isnt anything in that line
+10.
+
+#!/bin/bash
+sed -i ‘1iLooney tunes’ datebook
+#Matches the first line and adds whatever is next to 1i. 
+sed -i -e ‘$aThats all folks’ datebook
+#Searches for the last time using $a and adds the words following
+
+
+
+sources
+https://www.grymoire.com/Unix/Sed.html#uh-8
+https://unix.stackexchange.com/questions/70878/replacing-string-based-on-line-number
+https://flylib.com/books/en/4.356.1.44/1/
+https://riptutorial.com/sed
+
+https://youtu.be/YMqOocY0ovs
+
